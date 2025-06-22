@@ -1,0 +1,117 @@
+body {
+  background: #181818;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #222;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  text-align: center;
+}
+h1 {
+  color: #FFD600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(3, 64px);
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.cell {
+  background: #181818;
+  border: 2px solid #FFD600;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  color: #FFD600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  height: 64px;
+  width: 64px;
+  user-select: none;
+}
+.cell:hover {
+  background: #FFD600;
+  color: #181818;
+}
+.cell.winner {
+  background: #FFD600;
+  color: #222;
+  font-weight: bold;
+}
+.status {
+  min-height: 32px;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #FFD600;
+}
+.restart-btn {
+  background: #FFD600;
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.restart-btn:hover {
+  background: #fff200;
+}
+.player-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.player-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #FFD600;
+  font-size: 1rem;
+  outline: none;
+}
+.player-form button {
+  background: #FFD600;
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.player-form button:hover {
+  background: #fff200;
+}
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  .board {
+    grid-template-columns: repeat(3, 48px);
+    grid-template-rows: repeat(3, 48px);
+    gap: 8px;
+  }
+  .cell {
+    font-size: 1.5rem;
+    height: 48px;
+    width: 48px;
+  }
+}
